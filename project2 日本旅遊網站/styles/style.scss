@@ -1,0 +1,257 @@
+//源樣明體，較粗
+@font-face {
+  font-family: myfont1;
+  src: url(../owun-genwan-font-master/otf/TW/GenWanMin2TW-M.otf);
+}
+
+// 源雲明體，細體
+@font-face {
+  font-family: myfont2;
+  src: url(../oyaung-genyo-font-master/otf/TW/GenKiMin2TW-L.otf);
+}
+
+$themeColor: rgba(152, 57, 255, 0.5);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 900
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-family: "myfont1", Georgia, Times, serif;
+}
+
+p {
+  font-weight: normal;
+  font-family: "myfont2", Georgia, Times, serif;
+}
+
+li {
+  font-family: "myfont2", Georgia, Times, serif;
+}
+
+body {
+  position: relative;
+
+  img.mountfuji {
+    min-height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -5;
+    bottom: 0;
+    left: 0;
+  }
+
+  header {
+    background-color: white;
+    display: flex;
+    // 為了讓logo跟導覽列連結並排，所以要設定display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    // 製作讓頁首導覽列釘選在頁面最上方的功能
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.2);
+
+    section.logo {
+      display: flex;
+      flex: 2 1 400px;
+      align-items: center;
+      h1 {
+        font-size: 2.5rem;
+      }
+      img {
+        width: 6vw;
+        height: 6vw;
+      }
+    }
+
+    nav {
+      flex: 5 1 500px;
+
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+        transition: all 0.2s ease;
+        li {
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.35rem;
+            &:hover {
+              color: $themeColor;
+              border-bottom: 3px solid $themeColor;
+              padding-bottom: 0.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.background-img {
+      // 設定背景圖片
+
+      background-image: url(../images/富士山.jpg);
+      width: 100%; /* 固定寬度 */
+      height: 70vh; /* 固定高度 */
+      background-size: cover; /* 確保背景圖片填滿容器 */
+      background-position: center; /* 確保圖片居中 */
+      overflow: hidden; /* 防止內容溢出 */
+      transition: all 0.8s ease-in-out; /* 使用漸變效果 */
+      position: relative;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div.filter {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        min-height: 70vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      h3 {
+        color: white;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    // 這是四個景點圈圈的背景區塊設定
+    section.info-circles {
+      background-color: white;
+      padding: 2rem 1rem;
+
+      // 設定遊玩主題這個標題
+      h3 {
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      div.circles-place {
+        // border: 3px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        div.circle {
+          padding: 1rem;
+
+          // border: 3px solid red;
+          flex: 0 1 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img {
+            width: 80%;
+            border-radius: 50%;
+            transition: all 0.1s ease-in;
+            padding: 0.5rem;
+            &:hover {
+              border: 3px solid $themeColor;
+            }
+          }
+        }
+      }
+    }
+
+    section.empty-container {
+      min-height: 70vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        color: white;
+        font-size: 2rem;
+      }
+    }
+
+    section.google-map {
+      background-color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      h3 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        margin: 1rem;
+      }
+      iframe {
+        width: 100%;
+        height: 50vh;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    section.logo {
+      img {
+        width: 20vw;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    section.links {
+      margin-top: 2rem;
+      a {
+        img {
+          width: 5vh;
+          margin: 0rem 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    header {
+      section.logo {
+        flex-direction: column;
+        img {
+          width: 45vw;
+          height: 45vw;
+        }
+      }
+      nav {
+        ul {
+          flex-direction: column;
+          li {
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

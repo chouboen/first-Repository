@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// //源樣明體，較粗
+// @font-face {
+//   font-family: myfont1;
+//   src: url(../owun-genwan-font-master/otf/TW/GenWanMin2TW-M.otf);
+// }
+
+// // 源雲明體，細體
+// @font-face {
+//   font-family: myfont2;
+//   src: url(../oyaung-genyo-font-master/otf/TW/GenKiMin2TW-L.otf);
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-family: "myfont1", Georgia, Times, serif;
+}
+
+p {
+  font-family: "myfont2", Georgia, Times, serif;
+}
+
+body {
+  overflow-x: hidden;
+  nav {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgb(255, 255, 255);
+
+    // 製作讓頁首導覽列釘選在頁面最上方的功能
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.2);
+
+    ul {
+      display: flex; // 確保是 flex 佈局
+      flex-wrap: nowrap;
+      flex-direction: row; // 預設為橫向排列
+      list-style-type: none;
+      li {
+        a {
+          font-size: 1.25rem;
+          color: black;
+          text-decoration: none;
+          margin: 1.5rem;
+          transition: all 0.1s ease;
+          &:hover {
+            color: rgb(105, 59, 222);
+            border-bottom: 3px solid rgb(105, 59, 222);
+            padding-bottom: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.main-area {
+      min-height: 70vh;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      //   垂直置中
+      justify-content: center;
+      //   水平置中
+      align-items: center;
+
+      div.info {
+        flex-basis: 450px;
+
+        padding: 1rem;
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 1.125rem;
+          font-family: "myfont2", Georgia, Times, serif;
+        }
+        a {
+          color: black;
+          font-family: "myfont2", Georgia, Times, serif;
+          background-color: white;
+
+          border: 2px solid rgb(105, 59, 222);
+          padding: 0.3rem 0.5rem;
+          font-size: 1.25rem;
+          border-radius: 20px;
+          margin-top: 2rem;
+          display: inline-block;
+          text-decoration: none;
+          transition: all 0.5s ease;
+          &:hover {
+            transform: scale(1.15);
+          }
+        }
+      }
+
+      div.profile-img {
+        flex-basis: 450px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+    section.about-me {
+      color: white;
+      background-color: rgb(105, 59, 222);
+      padding: 5rem 0rem;
+      display: flex;
+      justify-content: center;
+
+      section.description {
+        width: 50%;
+        text-align: center;
+        h2 {
+          font-size: 2rem;
+        }
+        .progress-bar-area {
+          p {
+            margin-top: 1.25rem;
+          }
+        }
+      }
+    }
+    section.resume {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      padding: 2rem;
+
+      section.table {
+        // border: 2px solid red;
+        flex: 5 1 500px;
+        padding: 2rem;
+        --bs-table-bg: none;
+        table {
+          border-collapse: collapse;
+          tr {
+            border-bottom: 2px solid gray;
+            transition: all 0.2s ease;
+            &:hover {
+              background-color: rgba(228, 216, 255, 0.5);
+            }
+            td {
+              padding: 1rem;
+            }
+          }
+        }
+      }
+      section.picture {
+        // border: 2px solid blue;
+        flex: 1 1 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // align-items: stretch;
+        position: relative;
+        img {
+          width: 80%;
+        }
+
+        div.purpleRect1 {
+          width: 20vw;
+          height: 68vh;
+          border: 5px solid rgb(181, 152, 255);
+          position: absolute;
+          top: 65px;
+          left: 120px;
+          z-index: -1;
+        }
+        div.purpleRect2 {
+          width: 18vw;
+          height: 30vh;
+          border: 5px solid rgb(181, 152, 255);
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          z-index: -1;
+        }
+        div.purpleRect3 {
+          width: 15vw;
+          height: 40vh;
+          border: 5px solid rgb(181, 152, 255);
+          position: absolute;
+          top: 350px;
+          left: -50px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+// 這個功能沒有成功
+@media screen and (max-width: 900px) {
+  body {
+    main {
+      section.about-me {
+        section.description {
+          width: 80%;
+        }
+      }
+
+      section.resume {
+        overflow-x: auto;
+        section.picture {
+          div.purpleRect1,
+          div.purpleRect2,
+          div.purpleRect3 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 這個功能沒有成功
+@media screen and (max-width: 700px) {
+  body {
+    nav {
+      ul {
+        flex-direction: column !important; // 強制垂直排列
+        li {
+          padding: 1rem 0.5rem;
+        }
+      }
+    }
+  }
+}

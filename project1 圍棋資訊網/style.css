@@ -1,0 +1,274 @@
+/* 在最上面先把網頁預設的CSS設定歸零，這樣方便後續依照自己喜好設定 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: DFkai-sb, Times New Roman, Times, serif, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header div.top {
+  /* 設定padding讓頁首的物件彼此之間、與網頁之間有間距 */
+  padding: 1rem;
+  padding-top: 1.5rem;
+  /* 將圖片設定為頁首背景 */
+  background-image: url(./images/background.png);
+}
+
+header div.top h1 {
+  font-size: 2.5rem;
+}
+
+header div.top h3 {
+  font-size: 1rem;
+}
+
+header nav {
+  background-color: rgb(10, 60, 30, 0.8);
+}
+
+header nav ul {
+  /* 設定讓各頁面連結標籤變成橫向排列 */
+  display: flex;
+  /* 因為是ul標籤，所以有圓點，所以在這裡設定讓它不要顯示圓點 */
+  list-style-type: none;
+  justify-content: space-evenly; /* 讓元素在中心對齊 */
+}
+
+header nav ul li {
+  /* 設定讓各頁面連結標籤之間有間距（設定之前字全部都黏在一起） */
+  padding: 0.8rem 0.8rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: rgb(255, 255, 128);
+}
+
+.active {
+  color: rgb(255, 255, 128);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  /* 讓其在不同視窗上可以自動換行排版 */
+}
+/* 讓main裡面的標籤，也就是左右section標籤可以橫向排列 */
+
+main.no-flex {
+  display: block;
+}
+
+main section {
+  padding: 1.5rem;
+}
+/* 上下左右跟網頁有間隔 */
+
+section.left {
+  flex: 1 1 280px;
+  margin-left: 1.5rem;
+}
+
+section.left img {
+  width: 90%;
+}
+
+section.left h3 {
+  margin-bottom: 1rem;
+}
+
+section.left table {
+  margin-top: 1rem;
+}
+
+section.left table,
+section.left td {
+  padding: 0.2rem;
+}
+
+section.right {
+  flex: 4 1 500px;
+  margin-right: 2rem;
+}
+
+p {
+  padding: 0.5rem 0rem;
+}
+
+section.right ul {
+  margin-left: 1.25rem;
+}
+
+.player h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.player h5 {
+  font-size: 1.05rem;
+  padding-left: 1.25rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+.player h4,
+h5 {
+  color: rgb(45, 94, 65);
+}
+
+div.player {
+  margin: 2.5rem;
+  border: 4px solid rgb(199, 169, 0);
+  /* border-style: solid;
+  border-width: 4px;
+  border-color: rgb(199, 169, 0); */
+  padding: 1rem;
+}
+
+div.player p {
+  padding-left: 1.25rem;
+  padding-right: 1rem;
+}
+
+div.japan-top {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+div.japan-top div.img {
+  flex: 1 1 300px;
+  display: flex;
+  align-items: center;
+}
+
+div.japan-top div.img img {
+  width: 100%;
+}
+
+div.japan-top div.info {
+  flex: 3 1 600px;
+  padding-left: 1rem;
+}
+
+div.japan-top div.info ul {
+  padding-left: 1.25rem;
+}
+
+div.japan-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+div.japantext {
+  flex: 4 1 300px;
+}
+
+div.japan-bottom h3 {
+  color: rgb(45, 94, 65);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+div.japan-bottom p {
+  margin: 0.65rem;
+}
+
+.japanbattle {
+  margin-left: 2rem;
+}
+
+#piechart {
+  flex: 1 1 300px;
+}
+
+.chinaset h3 {
+  font-size: 1.5rem;
+  color: rgb(45, 94, 65);
+  font-weight: bold;
+}
+
+.chinaset {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+div.chbom table {
+  width: 80%;
+}
+
+div.chbom tr {
+  padding: 2rem;
+}
+
+div.chbom table {
+  border-spacing: 0 10px;
+}
+
+div.chbom td,
+th {
+  padding: 5px;
+  border: 0.9px solid #e7e7e7; /* 可選，用於顯示邊框 */
+}
+
+.twset {
+  margin: 1rem;
+  padding: 1rem;
+
+  align-items: center;
+}
+
+div.twtop h3 {
+  font-size: 1.5rem;
+  color: rgb(45, 94, 65);
+  font-weight: bold;
+}
+
+div.twbom h3 {
+  font-size: 1.5rem;
+  color: rgb(45, 94, 65);
+  font-weight: bold;
+}
+
+section.right h3 {
+  font-size: 1.5rem;
+  color: rgb(45, 94, 65);
+  font-weight: bold;
+}
+
+section.left h3 {
+  font-size: 1.5rem;
+  color: rgb(45, 94, 65);
+  font-weight: bold;
+}
+
+/* 如果 <hr> 被放置在 flex 容器中，確保它是作為區塊元素顯示 */
+hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+  margin: 1rem 0;
+}
+
+div.twbom ul {
+  margin-left: 2rem;
+}
